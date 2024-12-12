@@ -15,13 +15,18 @@ The code has been tested on the following systems:
 * Linux: Ubuntu 20.04
   
 <details>
-  <summary>Dependence</summary>
+  <summary>Dependencies</summary>
 
-  - Python >= 3.8  
-  - PyTorch >= 1.10  
-  - CUDA >= 11.1  
-  - torchvision  
-  - Other necessary libraries as listed in `requirements.txt`
+  - argparse
+  - numpy
+  - opencv-python
+  - python<=3.10.8
+  - scikit-image
+  - scikit-learn
+  - torch
+  - tqdm
+  - timm
+    
 
 </details>
 
