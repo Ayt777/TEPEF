@@ -8,10 +8,23 @@ System requirements
 -------
 
 ### Hardware requirements
+No non-standard hardware required.
 
 ### Software requirements
 The code has been tested on the following systems:
 * Linux: Ubuntu 20.04
+  
+<details>
+  <summary>Dependence</summary>
+
+  - Python >= 3.8  
+  - PyTorch >= 1.10  
+  - CUDA >= 11.1  
+  - torchvision  
+  - Other necessary libraries as listed in `requirements.txt`
+
+</details>
+
 
 Installation Guide
 -------
