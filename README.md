@@ -61,3 +61,4 @@ Instructions for use
 
 License
 -------
+MIT License
