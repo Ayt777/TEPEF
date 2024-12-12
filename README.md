@@ -26,10 +26,10 @@ The code has been tested on the following systems:
   - torch
   - tqdm
   - timm
-    
 
 </details>
 
+Please refer to **Installation Guide** for more detailed instructions.
 
 Installation Guide
 -------
