@@ -11,7 +11,7 @@ System requirements
 No non-standard hardware required.
 
 ### Software requirements
-The code has been tested on the following systems:
+The code has been tested on the following system:
 * Linux: Ubuntu 20.04
   
 <details>
@@ -36,13 +36,18 @@ Installation Guide
 * TIEPN
 
 * TSEEN
-The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning). 
+The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning). Please refer to [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning) for installation.
 
 Demo
 -------
 * TIEPN
 
 * TSEEN
+A small dataset is provided with code. You can simply run a demo:
+```python
+cd code/TSEEN/examples
+python train.py
+```
 
 Instructions for use
 -------
