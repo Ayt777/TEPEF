@@ -38,7 +38,7 @@ Installation Guide
 * TSEEN
 The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning). Please refer to [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning) for installation.
 
-Demo
+Demo & Instructions for use
 -------
 * TIEPN
 
@@ -54,11 +54,6 @@ The operation will perform training, save the checkpoints and prediction result.
 python R2.py
 ```
 
-Instructions for use
--------
-* TIEPN
-
-* TSEEN
 
 License
 -------
