@@ -6,6 +6,9 @@ Atmospheric turbulence, prevalent in natural and engineering systems, presents s
 
 System requirements
 -------
+*TIEPN
+
+*TSEEN
 
 Installation Guide
 -------
