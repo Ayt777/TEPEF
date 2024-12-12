@@ -6,17 +6,26 @@ Atmospheric turbulence, prevalent in natural and engineering systems, presents s
 
 System requirements
 -------
+###Hardware requirements
+###Software requirements
+The code has been tested on the following systems:
+* Linux: Ubuntu 20.04
+
+Installation Guide
+-------
+* TIEPN
+
+* TSEEN
+The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL/tree/OpenSTL-Lightning). 
+
+Demo
+-------
 * TIEPN
 
 * TSEEN
 
-Installation Guide
--------
-
-
-Demo
--------
-
-
 Instructions for use
 -------
+* TIEPN
+
+* TSEEN
