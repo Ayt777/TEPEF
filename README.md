@@ -13,7 +13,17 @@ No non-standard hardware required.
 ### Software requirements
 The code has been tested on the following system:
 * Linux: Ubuntu 20.04
-  
+
+<details>
+  <summary>Requirements</summary>
+
+  - Linux 
+  - Python 3.7+
+  - PyTorch 1.8 or higher
+  - CUDA 10.1 or higher
+
+</details>
+
 <details>
   <summary>Dependencies</summary>
 
@@ -54,6 +64,9 @@ The operation will perform training and testing, save the checkpoints and the pr
 python R2.py
 ```
 
+Test results for reproduction
+-------
+You can download the test results 
 
 License
 -------
