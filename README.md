@@ -49,7 +49,7 @@ A small dataset is provided with code. You can simply run a demo:
 cd TSEEN/examples
 python train.py
 ```
-The operation will perform training, save the checkpoints and the prediction result. To evaluate the result and obtain MSE, MAE, RMSE, $R^2$ and Pearson correlation coefficient, you can run:
+The operation will perform training and testing, save the checkpoints and the prediction result. To evaluate the result and obtain MSE, MAE, RMSE, $R^2$ and Pearson correlation coefficient, you can run:
 ```python
 python R2.py
 ```
