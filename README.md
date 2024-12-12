@@ -56,7 +56,7 @@ Demo & Instructions for use
 
 A small dataset is provided, you can download through [Baidu Netdisk](https://pan.baidu.com/s/1ZizZL3ycSxGw6Rgw83YKqA?pwd=ttv2) or [Google Drive]() and place it in `TSEEN/small_dataset.pkl`. 
 
-You can simply run a demo:
+Then you can simply run a demo:
 ```python
 cd TSEEN/examples
 python train.py
