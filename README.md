@@ -70,4 +70,4 @@ You can download the test results through [Baidu Netdisk](https://pan.baidu.com/
 
 License
 -------
-MIT License
+This project is covered under the **Apache 2.0 License**.
