@@ -58,3 +58,6 @@ Instructions for use
 * TIEPN
 
 * TSEEN
+
+License
+-------
