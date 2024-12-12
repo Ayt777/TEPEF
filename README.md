@@ -1,2 +1,2 @@
-turbulence effects induced C_n^2 probing and evolutionary framework
+turbulence effects induced C<sub>n</sub><sup>2</sup> probing and evolutionary framework
 ======
