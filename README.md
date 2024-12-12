@@ -7,9 +7,9 @@ Atmospheric turbulence, prevalent in natural and engineering systems, presents s
 System requirements
 -------
 
-###Hardware requirements
+### Hardware requirements
 
-###Software requirements
+### Software requirements
 The code has been tested on the following systems:
 * Linux: Ubuntu 20.04
 
