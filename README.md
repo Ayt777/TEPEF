@@ -53,6 +53,11 @@ Please refer to **Installation Guide** for more detailed instructions.
 Installation Guide
 -------
 * TIEPN
+  
+```python
+cd TIEPN
+pip install -r requirements.txt
+```
 
 * TSEEN
 
