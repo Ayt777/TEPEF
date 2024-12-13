@@ -69,7 +69,7 @@ Then you can simply run a demo:
 cd TSEEN/examples
 python train.py
 ```
-The expected run time for the demo on a standard hardware is approximately several seconds or more. The operation will perform training and testing, save the checkpoints and the prediction result. To evaluate the result and obtain MSE, MAE, RMSE, $R^2$ and Pearson correlation coefficient, you can run:
+The expected run time for the demo on a standard hardware is approximately several minutes or more. The operation will perform training and testing, save the checkpoints and the prediction result. To evaluate the result and obtain MSE, MAE, RMSE, $R^2$ and Pearson correlation coefficient, you can run:
 ```python
 python R2.py
 ```
