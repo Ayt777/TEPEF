@@ -59,7 +59,11 @@ The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL
 Demo & Instructions for use
 -------
 * TIEPN
-
+Then you can simply run a demo:
+```python
+cd TIEPN
+python train.py
+```
 * TSEEN
 
 A small dataset is provided, you can download through [Baidu Netdisk](https://pan.baidu.com/s/1ZizZL3ycSxGw6Rgw83YKqA?pwd=ttv2) or [Google Drive](https://drive.google.com/file/d/1mh7mX5fptxWgPAtrmlsI6pj94DADbddt/view?usp=drive_link) and place it in `TSEEN/examples/small_dataset.pkl`. 
