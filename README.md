@@ -60,7 +60,7 @@ Demo & Instructions for use
 
 * TSEEN
 
-A small dataset is provided, you can download through [Baidu Netdisk](https://pan.baidu.com/s/1ZizZL3ycSxGw6Rgw83YKqA?pwd=ttv2) or [Google Drive]() and place it in `TSEEN/examples/small_dataset.pkl`. 
+A small dataset is provided, you can download through [Baidu Netdisk](https://pan.baidu.com/s/1ZizZL3ycSxGw6Rgw83YKqA?pwd=ttv2) or [Google Drive](https://drive.google.com/file/d/1mh7mX5fptxWgPAtrmlsI6pj94DADbddt/view?usp=drive_link) and place it in `TSEEN/examples/small_dataset.pkl`. 
 
 Then you can simply run a demo:
 ```python
@@ -74,7 +74,7 @@ python R2.py
 
 Test results for reproduction
 -------
-You can download the test results through [Baidu Netdisk](https://pan.baidu.com/s/1V52Dbm9ie3lHXgRNmV-eFQ?pwd=pcsy) or [Google Drive]().
+You can download the test results through [Baidu Netdisk](https://pan.baidu.com/s/1V52Dbm9ie3lHXgRNmV-eFQ?pwd=pcsy) or [Google Drive](https://drive.google.com/drive/folders/1oxasj06Zo598s68UilxmjRs3n0QqhAHi?usp=drive_link).
 
 License
 -------
