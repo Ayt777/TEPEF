@@ -59,7 +59,8 @@ The code for TSEEN is based on [OpenSTL](https://github.com/chengtan9907/OpenSTL
 Demo & Instructions for use
 -------
 * TIEPN
-Then you can simply run a demo:
+
+You can simply run a demo:
 ```python
 cd TIEPN
 python train.py
