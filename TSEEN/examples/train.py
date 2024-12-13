@@ -50,25 +50,9 @@ if __name__=="__main__":
         'total_length': pre_seq_length + aft_seq_length,
         'batch_size': batch_size,
         'val_batch_size': batch_size,
-        # all 4->16
-        # 'epoch': 14,
-        # 'lr': 0.0044755,
-        # 'lr': 0.0035755,
-
-        # all 4->8
-        # 'epoch': 12,
-        # 'lr': 0.0041755,
-
-        # all 4->4
-        'epoch': 10,
+        'epoch': 30,
         'lr': 0.003,
-        # 'epoch': 30,
-        # 'lr': 0.00033755,
-        # 'epoch': 8,
-        # 'lr': 0.0025755,
-
         'metrics': ['mse', 'mae','rmse'],
-
         'ex_name': 'custom_exp',
         'dataname': 'custom',
         'in_shape': [4, 20, 30, 30],
