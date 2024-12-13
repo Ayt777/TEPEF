@@ -9,7 +9,7 @@ class Parameter(object):
         self.parser = argparse.ArgumentParser(description='Video extract Cn2')
         self.parser.add_argument('--train_time', type=str, default=time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime()))
         self.parser.add_argument('--data_root', type=str, default='./MATID/train')
-        self.parser.add_argument('--data_test_root', type=str, default='./MATID/test')
+        self.parser.add_argument('--data_valid_root', type=str, default='./MATID/valid')
         self.parser.add_argument('--time_length', type=int, default=9, help='the num of frames')
 
         # tfp parameters
@@ -33,7 +33,7 @@ class Parameter(object):
         self.parser.add_argument('--batch_size', type=int, default=1)
         self.parser.add_argument('--shuffle', type=bool, default=True)
         self.parser.add_argument('--print_freq', type=int, default=3)
-        self.parser.add_argument('--savepath', type=str, default='./experiment')
+        self.parser.add_argument('--save_dir', type=str, default='./experiment')
         self.parser.add_argument('--model', type=str, default='TEPN')
         # pretrained_reprojection_model
         self.parser.add_argument('--pretrained_reprojection_file', type=str, default='./experiment/2023_08_14_21_04_01_rdb_cn2_only_cn2/checkpoint_500.pth.tar')

@@ -46,7 +46,8 @@ class Logger():
         self.logger.flush()
 
     def __del__(self):
-        self.logger.close()
+        if hasattr(self, 'logger') and self.logger:
+            self.logger.close()
 
     # register values for each epoch, such as loss, PSNR etc.
     def register(self, name, epoch, value):

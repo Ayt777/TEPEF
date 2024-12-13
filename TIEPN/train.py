@@ -61,11 +61,10 @@ if __name__ == '__main__':
     logger('TEP_structure:', TEP_, verbose=False)
     logger('TEE_structure:', TEE_, verbose=False)
 
-    # # 重投影模块进行误差计算 
+    #Re-projection model
     reprojection = reprojection().cuda()
     checkpoint_reprojection = torch.load(para.pretrained_reprojection_file, map_location=lambda storage, loc: storage.cuda(0))
     reprojection.load_state_dict(checkpoint_reprojection['state_dict'], strict=False)
-    #把reprojection的参数冻结
     for param in reprojection.parameters():
         param.requires_grad = False
         

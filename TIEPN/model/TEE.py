@@ -102,7 +102,7 @@ class STFE(nn.Module):
     def __init__(self,para):
         super(STFE, self).__init__()
         self.n_feats = para.n_features
-        self.activation = para.activation_deblur
+        self.activation = para.activation_tee
         self.F_B0 = conv5x5(3, self.n_feats, stride=1)
         self.F_B1 = RDB_DS(in_channels=self.n_feats, growthRate=self.n_feats, num_layer=3, activation=self.activation)
         self.F_B2 = RDB_DS(in_channels=2 * self.n_feats, growthRate=int(self.n_feats), num_layer=3,
@@ -151,7 +151,7 @@ class Reconstructor(nn.Module):
         self.num_ff = para.future_frames
         self.num_fb = para.past_frames
         self.related_f = self.num_ff + 1 + self.num_fb
-        self.n_feats = para.n_features_deblur
+        self.n_feats = para.n_features_tee
         self.model = nn.Sequential(
             nn.ConvTranspose2d((10 * self.n_feats) * (self.related_f), 2 * self.n_feats, kernel_size=3, stride=2,
                                padding=1, output_padding=1),
@@ -166,14 +166,14 @@ class Reconstructor(nn.Module):
 class GSA(nn.Module):
     def __init__(self, para):
         super(GSA, self).__init__()
-        self.n_feats = para.n_features_deblur
+        self.n_feats = para.n_features_tee
         self.center = para.past_frames
         self.num_ff = para.future_frames
         self.num_fb = para.past_frames
         self.related_f = self.num_ff + 1 + self.num_fb
         self.F_f = nn.Sequential(
             nn.Linear(2 * (10 * self.n_feats), 4 * (10 * self.n_feats)),
-            actFunc(para.activation_deblur),
+            actFunc(para.activation_tee),
             nn.Linear(4 * (10 * self.n_feats), 2 * (10 * self.n_feats)),
             nn.Sigmoid()
         )
@@ -207,9 +207,9 @@ class FusionModule(nn.Module):
     def __init__(self,para):
         super(FusionModule, self).__init__()
         self.model_para = para.data_flag
-        self.n_feats = para.n_features_deblur
-        self.n_blocks = para.n_blocks_deblur
-        self.activation= para.activation_deblur
+        self.n_feats = para.n_features_tee
+        self.n_blocks = para.n_blocks_tee
+        self.activation= para.activation_tee
         self.num_ff = para.future_frames
         self.num_fb = para.past_frames
         self.F_R = RDNet(in_chs=(2 + 8) * self.n_feats, growth_rate=2 * self.n_feats, num_layer=3,

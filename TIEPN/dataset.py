@@ -32,7 +32,7 @@ class VideoFrameDataset(Dataset):
         if flag == 0:
             self.root_path = para.data_root
         else:
-            self.root_path = para.data_test_root
+            self.root_path = para.data_valid_root
 
         self.temporal_len = para.time_length
         self.flist = os.listdir(self.root_path)
