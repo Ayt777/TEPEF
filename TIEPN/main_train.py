@@ -61,6 +61,14 @@ if __name__ == '__main__':
     logger('TEP_structure:', TEP_, verbose=False)
     logger('TEE_structure:', TEE_, verbose=False)
 
+    # # 重投影模块进行误差计算 
+    reprojection = reprojection().cuda()
+    checkpoint_reprojection = torch.load(para.pretrained_reprojection_file, map_location=lambda storage, loc: storage.cuda(0))
+    reprojection.load_state_dict(checkpoint_reprojection['state_dict'], strict=False)
+    #把reprojection的参数冻结
+    for param in reprojection.parameters():
+        param.requires_grad = False
+        
     # Initialize loss functions
     get_rec_loss = L1_Charbonnier_loss()
     get_cn2_l1_loss = L1_Charbonnier_loss()
@@ -93,7 +101,7 @@ if __name__ == '__main__':
             raise FileNotFoundError(msg)
     len_traindata = len(dataloader)
     ratio_len = int(1 * len_traindata)
-    len_testdata = len(dataset_valid)
+    len_validdata = len(dataset_valid)
 
     # Training loop
     for epoch in range(para.start_epoch, para.n_epochs + 1):
@@ -156,7 +164,7 @@ if __name__ == '__main__':
         epoch_loss_cn2 = epoch_loss_cn2 / (ratio_len / para.batch_size)
         epoch_r2 = epoch_r2/ (ratio_len / para.batch_size)
         print('Epoch {}: loss of the Rnn is {}\n loss_cn2 of the Run is {}\n r2 of the Run is {}\n'.format(epoch, epoch_loss,epoch_loss_cn2 ,epoch_r2))
-        with open(os.path.join(para.savepath, 'Epoch_loss_logger_{}.txt'.format(para.train_time)), 'a') as log_file:
+        with open(os.path.join(para.save_dir, 'Epoch_loss_logger_{}.txt'.format(para.train_time)), 'a') as log_file:
             log_file.write(
                 'Epoch : {},  loss :{}, loss_cn2_3d:{}, lr:{}, lr_cn2:{}, p:{}\n'.format(epoch, epoch_loss,
                 epoch_loss_cn2,optimizer.param_groups[0]['lr'],
@@ -171,15 +179,15 @@ if __name__ == '__main__':
             'optimizer_cn2': optimizer_cn2.state_dict(),
         }
         with torch.no_grad():
-            test_epoch_loss = 0
-            test_epoch_loss_cn2=0
+            valid_epoch_loss = 0
+            valid_epoch_loss_cn2=0
             valid_epoch_r2 = 0
             valid_epoch_p = 0
             valid_epoch_mae = 0
             valid_epoch_mse = 0
             valid_rmse = 0
             total_iters=0
-            t_valid = tqdm(dataloader_valid, desc=f"Testing Epoch {epoch}/{para.n_epochs}", ncols=200)
+            t_valid = tqdm(dataloader_valid, desc=f"validing Epoch {epoch}/{para.n_epochs}", ncols=200)
             for i, data in enumerate(t_valid):
                 total_iters += para.batch_size
                 input = data['input'].to(device)
@@ -201,7 +209,7 @@ if __name__ == '__main__':
                 valid_epoch_mse += mse.item()
                 valid_rmse += rmse.item()
                 valid_epoch_r2 += r2.item()
-                message_ = '(test_epoch:{}, iter:{}, mae:{}, mse:{}, p:{},r2:{})'.format(epoch, total_iters,mae, mse,p,r2)
+                message_ = '(valid_epoch:{}, iter:{}, mae:{}, mse:{}, p:{},r2:{})'.format(epoch, total_iters,mae, mse,p,r2)
                 t_valid.write(message_)
                 t_valid.update()
                 with open(para.log_path, 'a') as log_file:
@@ -212,7 +220,7 @@ if __name__ == '__main__':
             valid_epoch_mse = valid_epoch_mse / (len(dataset_valid) / para.batch_size)
             valid_epoch_r2 = valid_epoch_r2 / (len(dataset_valid) / para.batch_size)
             print('mae is {}, mse is {}, rmse is {}, r2 is {}, p is {}'.format(valid_epoch_mae, valid_epoch_mse, valid_rmse, valid_epoch_r2, valid_epoch_p))
-            with open(os.path.join(para.savepath, 'Epoch_loss_logger_{}.txt'.format(para.train_time)), 'a') as log_file:
+            with open(os.path.join(para.save_dir, 'Epoch_loss_logger_{}.txt'.format(para.train_time)), 'a') as log_file:
                 log_file.write(
                     'valid___Epoch : mae is {}, mse is {}, rmse is {}, r2 is {}, p is {}'.format(valid_epoch_mae, valid_epoch_mse, valid_rmse, valid_epoch_r2, valid_epoch_p))
 
