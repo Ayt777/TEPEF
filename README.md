@@ -36,7 +36,6 @@ The code has been tested on the following system:
   - argparse
   - numpy
   - opencv-python
-  - python<=3.10.8
   - scikit-image
   - scikit-learn
   - torch
