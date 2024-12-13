@@ -44,6 +44,7 @@ The code has been tested on the following system:
   - torch
   - tqdm
   - timm
+  - scipy
 
 </details>
 
