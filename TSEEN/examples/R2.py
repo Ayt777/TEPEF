@@ -28,11 +28,9 @@ def mae(y_true, y_pred):
 def rmse(y_true, y_pred):
     return np.sqrt(np.mean((y_true - y_pred)**2))
 
-# 从.npy文件中加载数据
-y_true = (np.load("work_dirs/custom_exp/saved/trues.npy"))*1e-9  # 实际值
-y_pred = (np.load("work_dirs/custom_exp/saved/preds.npy"))*1e-9 # 预测值
+y_true = (np.load("work_dirs/custom_exp/saved/trues.npy"))*1e-9
+y_pred = (np.load("work_dirs/custom_exp/saved/preds.npy"))*1e-9
 
-# 计算 R2
 r2 = r2_score(y_true, y_pred)
 pc = pearson_correlation(y_true, y_pred)
 mse_value = mse(y_true, y_pred)
